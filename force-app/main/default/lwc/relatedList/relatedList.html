@@ -21,9 +21,11 @@
                         <a class="slds-card__header-link" onclick={handleGotoRelatedList}>{state.title}</a>
                       </h2>
                     </div>
-                    <div class="slds-no-flex">
-                        <lightning-button label="New" onclick={handleCreateRecord}></lightning-button>
-                    </div>
+                    <template if:false={hideNewButton}>
+                        <div class="slds-no-flex">
+                            <lightning-button label="New" onclick={handleCreateRecord}></lightning-button>
+                        </div>
+                    </template>
                   </header>
                 </div>
                 <template if:true={hasRecords}>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card  title="Account Task Search">
+        <c-lookup onsearch={accountSearch} label="Account" placeholder="Search For Account" scroll-after-n-items="10" onselectionchange={handleAccountChange} required></c-lookup>
+        <c-related-list 
+            record-id={accountId}
+            sobject-api-name="Task"
+            related-field-api-name="WhatId"
+            relationship-api-name="Activities"
+            sorted-by="CreatedDate"
+            sorted-direction="DESC"
+            fields={taskFields}
+            columns={taskColumns}
+            hide-new-button="true"
+            hide-actions="true"
+            custom-title="Account Tasks"
+            custom-icon="standard:task"
+        >
+        </c-related-list>
+        <p slot="footer">Task Search</p>
+    </lightning-card>
+</template>

@@ -14,6 +14,7 @@ export default class RelatedList extends NavigationMixin(LightningElement) {
     @api rowActionHandler;
     @api fields;
     @api columns;
+	@api customIcon;
     @api customActions = [];
     helper = new RelatedListHelper()
 
@@ -61,6 +62,7 @@ export default class RelatedList extends NavigationMixin(LightningElement) {
         this.state.sobjectLabelPlural = data.sobjectLabelPlural;
         this.state.title = data.title;
         this.state.parentRelationshipApiName = data.parentRelationshipApiName;
+        this.state.iconName = this.customIcon == null ? data.iconName : this.customIcon;
         this.state.columns = this.helper.initColumnsWithActions(this.columns, this.customActions)
     }
 
