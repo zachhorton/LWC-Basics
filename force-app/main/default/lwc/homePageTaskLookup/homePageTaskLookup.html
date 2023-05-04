@@ -1,6 +1,25 @@
 <template>
     <lightning-card  title="Account Task Search">
+        
         <c-lookup onsearch={accountSearch} label="Account" placeholder="Search For Account" scroll-after-n-items="10" onselectionchange={handleAccountChange} required></c-lookup>
+
+        <lightning-record-view-form
+            id="acctRecord"
+            object-api-name="Account"
+            record-id={accountId}
+        >
+            <div class="slds-grid">
+                <div class="slds-size_1-of-2">
+                    <lightning-output-field field-name="Description">
+                    </lightning-output-field>
+                </div>
+                <div class="slds-size_1-of-2">
+                    <lightning-output-field field-name="Type">
+                    </lightning-output-field>
+                </div>
+            </div>
+        </lightning-record-view-form>
+
         <c-related-list 
             record-id={accountId}
             sobject-api-name="Task"
@@ -18,4 +37,5 @@
         </c-related-list>
         <p slot="footer">Task Search</p>
     </lightning-card>
+    
 </template>

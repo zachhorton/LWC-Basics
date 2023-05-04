@@ -17,7 +17,7 @@ export default class HomePageTaskLookup extends LightningElement {
             hour12: true
           }},
           { label: 'Status', fieldName: 'Status', type: 'text'},
-          { label: 'Assigned To', fieldName: 'LinkName', type: 'text', typeAttributes: {label: { fieldName: 'Owner_Name' }, target: '_'}, wrapText: true}
+          { label: 'Assigned To', fieldName: 'LinkName', type: 'url', typeAttributes: {label: { fieldName: 'Owner_Name' }, target: '_blank'}, wrapText: true}
     ];
 
     accountSearch(event) {
